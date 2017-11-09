@@ -6,19 +6,28 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 12:25:44 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/09 17:17:08 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/09 19:31:08 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Toi qui voit ce main dont la laideur te petrifie n'aie crainte, il trouvera son jour de beaute bientot
+/*Toi qui voit ce main dont la laideur te petrifie n'aie crainte, 
+ * il trouvera la beaute aui lui est due dans quelques jours
+ * et si tu te dis "il aurait du etre beau des le debut" je suis d'accord
+ */
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 #include "../libft/libft.h"
 
 #define STRING "la boheme."
 #define STRING2 "la bohema."
 #define STRINGTOLONG "les sanglots longs des violons de l'automne blessent mon coeur d'une langueur monotone"
+#define MEMALLOCSIZE 25
+#define ATOITEST "12354654"
+#define ATOITESTNEG "-98654654"
+
 
 int main(void)
 {
@@ -30,6 +39,8 @@ int main(void)
 	char copy2[11];
 	char copy3[10];
 	char copy4[10];
+	char lcatstring[32];
+	char lcatstring2[32];
 
 	
 	printf("=== memtest ===\nresultat attendu : 10 fois le char c\nOfficiel :%s\nEtudiant :%s\n", memset(b, 99, (size_t)10), ft_memset(b2, 99, (size_t)10));
@@ -71,9 +82,6 @@ int main(void)
 	printf("case 22 original : %c, case 22 Etudiant %c\n", catstring[22], catstring2[22]);
 
 	printf("=== strncat ===\nOriginal:%s\nEtudiant:%s\n", strncat(catstring, STRING, 5), ft_strncat(catstring2, STRING, 5));
-
-	char lcatstring[32];
-	char lcatstring2[32];
 	
 	strcat(lcatstring, STRING);
 	strcat(lcatstring2, STRING);
@@ -90,6 +98,38 @@ int main(void)
 	printf("=== strnstr ===\nOriginal:%s\nEtudiant:%s\n", strnstr(STRINGTOLONG, "", 100), ft_strnstr(STRINGTOLONG, "", 100));
 	printf("Test 2\nOriginal:%s\nEtudiant:%s\n", strnstr(STRINGTOLONG, "coeur", 100), ft_strnstr(STRINGTOLONG, "coeur", 100));
 
+	printf("=== strcmp ===\nOriginal:%d\nEtudiant:%d\n", strcmp(STRINGTOLONG, STRING), ft_strcmp(STRINGTOLONG, STRING));
+	
+	printf("=== atoi ===\nOriginal:%d\nEtudiant:%d\n", atoi(ATOITEST), ft_atoi(ATOITEST));
+	printf("-Negative test\nOriginal:%d\nEtudiant:%d\n", atoi(ATOITESTNEG), ft_atoi(ATOITESTNEG));
+
+	printf("=== isalpha ===\nOriginal:%d\n,Etudiant:%d\n", isalpha('A'), ft_isalpha('A'));
+	printf("Test 2\nOriginal:%d\n,Etudiant:%d\n", isalpha('9'), ft_isalpha('9'));
+
+	printf("=== isdigit ===\nOriginal:%d\nEtudiant:%d\n", isdigit('0'), ft_isdigit('0'));
+	printf("Test 2\nOriginal:%d\nEtudiant:%d\n", isdigit('a'), ft_isdigit('a'));
+
+	printf("=== isalnum ===\nOriginal:%d\nEtudiant:%d\n", isalnum('1'), ft_isalnum('1'));
+	printf("Test 2 \nOriginal:%d\nEtudiant:%d\n", isalnum('1'), ft_isalnum('1'));
+	printf("Test 3 \nOriginal:%d\nEtudiant:%d\n", isalnum('j'), ft_isalnum('j'));
+
+	printf("=== iscascii === \nOriginal:%d\nEtudiant:%d\n", isascii(127), ft_isascii(127));
+	
+	printf("=== isprint === \nOriginal:%d\nEtudiant:%d\n", isprint(127), ft_isprint(127))
+		;
+	printf("=== toupper === \nOriginal:%c\nEtudiant:%c\n", toupper('A'), ft_toupper('A'));
+	printf("=== toupper === \nOriginal:%c\nEtudiant:%c\n", toupper('{'), ft_toupper('{'));
+	printf("=== toupper === \nOriginal:%c\nEtudiant:%c\n", toupper('z'), ft_toupper('z'));
 
 
+	printf("=== tolower === \nOriginal:%c\nEtudiant:%c\n", tolower('A'), ft_tolower('A'));
+	printf("=== tolower === \nOriginal:%c\nEtudiant:%c\n", tolower('{'), ft_tolower('{'));
+	printf("=== tolower === \nOriginal:%c\nEtudiant:%c\n", tolower('z'), ft_tolower('z'));
+	
+	printf("=== memalloc ===\n");
+	printf("Etudiant: ");
+	if (ft_memalloc(15) == NULL)
+		printf("failure");
+	else
+		printf("Success\n");
 }
