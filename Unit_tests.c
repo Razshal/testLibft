@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 12:25:44 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/11 19:08:34 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/12 14:36:44 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
  */
 
 #include "Unit_tests.h"
-
 #include "../libft/libft.h"
 #include <stdio.h>
 #include <string.h>
@@ -45,13 +44,8 @@ int main(void)
 	char *strnewtest;
 	
 
-	void test_ft_memset(void);
-
-
-	bzero(b, 10);
-	ft_bzero(b2, 10);
-	printf("=== bzero ===\nresultat attendu : ligne vide (10 bytes a 0)\nOfficiel :%s\nEtudiant :%s\n", (char*)b, (char*)b2);
-
+	test_ft_memset();
+	test_ft_bzero();
 
 	printf("=== memcpy ===\nresultat attendu :%s\nEtudiant :%s\n", memcpy(b, str_src, 10), ft_memcpy(b2, str_src, 10));
 
