@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:51:26 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 19:20:40 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/12 19:47:26 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,15 @@ void test_ft_memcmp(void)
 	else
 	{
 		PRINTFFAILURE;
-		printf("Resultat different de la fonction officielle");
-	}
-
-	if (memcmp(str, "\\la\\ bo", FILLER) == ft_memcmp(str, "\\la\\ bo", FILLER))
-		PRINTFSUCCESS;
-	else
-	{
-		PRINTFFAILURE;
 		printf("Crash quand les args sont egaux");
 	}
 
-	if (memcmp("la boa", "la boz", FILLER) == ft_memcmp("la boa", "la boz", FILLER))
+	if (memcmp((uint8_t *)"la boa", (uint8_t *)"la boa", FILLER) == ft_memcmp((uint8_t *)"la boa", (uint8_t *)"la boa", FILLER))
 		PRINTFSUCCESS;
 	else
 	{
 		PRINTFFAILURE;
-		printf("Crash quand le 2eme arg est plus loin dans la table ascii");
+		printf("Crash quand il faut manipuler des unsigned char");
 	}
 
 	if (memcmp(str3, str4, FILLER) == ft_memcmp(str3, str4, FILLER))
@@ -51,5 +43,5 @@ void test_ft_memcmp(void)
 		PRINTFFAILURE;
 		printf("Crash quand le 2eme arg est plus loin dans la table ascii ou plus long");
 	}
-	}
+}
 

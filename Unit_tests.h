@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:18:03 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 18:45:34 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/12 19:47:13 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void test_ft_memccpy(void);
 void test_ft_memmove(void);
 void test_ft_memchr(void);
 void test_ft_memcmp(void);
+
+void test_ft_strdup(void);
 
 #endif
