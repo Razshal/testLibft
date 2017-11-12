@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:18:24 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 18:51:09 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/12 20:23:36 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ int main(void)
 
 	printf("=== strlen ===\nResultat attendu : le nombre de caracteres dans \"%s\"\nOfficiel :%lu\nEtudiant :%lu\n", STRING, strlen(STRING), ft_strlen(STRING));
 	
-
-	printf("=== strdup ===\nResultat attendu :%s\nEtudiant :%s\n", strdup(STRING), ft_strdup(STRING));
-	
+	test_ft_strdup();
 
 	printf("=== strcpy ===\nResultat attendu :%s\nEtudiant :%s\n", strcpy(copy, STRING), ft_strcpy(copy2, STRING));
 	
