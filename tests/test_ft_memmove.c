@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_bzero.c                                    :+:      :+:    :+:   */
+/*   test_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/11 19:09:32 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 15:47:28 by mfonteni         ###   ########.fr       */
+/*   Created: 2017/11/12 15:32:26 by mfonteni          #+#    #+#             */
+/*   Updated: 2017/11/12 15:59:56 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Unit_tests.h"
 
-void test_ft_bzero(void)
+void test_ft_memmove(void)
 {
-	char str[FILLER + 2];
-	char str2[FILLER + 2];
+	char src[] = STRING;
+	char dest[FILLER];
+	char dest2[FILLER];
+	
+	printf("=== memmove ===\n");
+	memmove(dest, src, FILLER);
+	ft_memmove(dest2, src, FILLER);
 
-	printf("=== bzero ===\n");
-	memset(str, 'a', FILLER + 2);
-	memset(str2, 'a', FILLER + 2);
-	bzero(str, FILLER);
-	ft_bzero(str2, FILLER);
-
-	if (!memcmp(str, str2, FILLER + 2))
+	if (!memcmp(dest, dest2, FILLER))
 		PRINTFSUCCESS;
 	else
 	{
 		PRINTFFAILURE;
-		printf("Votre bzero ne remplit pas correctement (trop loin/pas assez/pas du tout\n");
-	}
+		printf("Copie non identique a la copie qu'a effectue la fonction originale\n");
+	} 
 }

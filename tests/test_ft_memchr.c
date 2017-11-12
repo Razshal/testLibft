@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_bzero.c                                    :+:      :+:    :+:   */
+/*   test_ft_memchr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/11 19:09:32 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 15:47:28 by mfonteni         ###   ########.fr       */
+/*   Created: 2017/11/12 16:21:26 by mfonteni          #+#    #+#             */
+/*   Updated: 2017/11/12 16:48:50 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Unit_tests.h"
 
-void test_ft_bzero(void)
+void test_ft_memchr(void)
 {
-	char str[FILLER + 2];
-	char str2[FILLER + 2];
+	char src[] = STRING;
 
-	printf("=== bzero ===\n");
-	memset(str, 'a', FILLER + 2);
-	memset(str2, 'a', FILLER + 2);
-	bzero(str, FILLER);
-	ft_bzero(str2, FILLER);
-
-	if (!memcmp(str, str2, FILLER + 2))
+	printf("=== memchr ===\n");
+	if (memchr(src, TESTCHAR, FILLER))
+	{
+		if (!memcmp(memchr(src, TESTCHAR, FILLER), 
+					ft_memchr(src, TESTCHAR, FILLER), FILLER))
+		PRINTFSUCCESS;
+		else
+		{
+			PRINTFFAILURE;
+			printf("Resultat different de la fonction originale");
+		}
+	}
+	if (memchr(src, TESTCHARTRAP, FILLER) 
+			== ft_memchr(src, TESTCHARTRAP, FILLER))
 		PRINTFSUCCESS;
 	else
 	{
 		PRINTFFAILURE;
-		printf("Votre bzero ne remplit pas correctement (trop loin/pas assez/pas du tout\n");
+		printf("Mauvaise valeur de retour");
 	}
 }

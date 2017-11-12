@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Le_main.c                                          :+:      :+:    :+:   */
+/*   Unit_tests.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 12:25:44 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 14:36:44 by mfonteni         ###   ########.fr       */
+/*   Created: 2017/11/12 15:18:24 by mfonteni          #+#    #+#             */
+/*   Updated: 2017/11/12 18:51:09 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*Toi qui voit ce main dont la laideur te petrifie n'aie crainte, 
  * il trouvera la beaute qui lui est due dans quelques jours
- * et si tu te dis "il aurait du etre beau des le debut" je suis d'accord
  */
 
 #include "Unit_tests.h"
 #include "../libft/libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
 
 #define MEMALLOCSIZE 25
 #define ATOITEST "12354654"
@@ -28,10 +23,6 @@
 
 int main(void)
 {
-	void *b[10];
-	void *b2[10];
-	char *str_src = STRING;
-	char *str_src2 = STRING2;
 	char copy[11];
 	char copy2[11];
 	char copy3[10];
@@ -46,28 +37,11 @@ int main(void)
 
 	test_ft_memset();
 	test_ft_bzero();
-
-	printf("=== memcpy ===\nresultat attendu :%s\nEtudiant :%s\n", memcpy(b, str_src, 10), ft_memcpy(b2, str_src, 10));
-
-
-	printf("=== memccpy ===\nresultat attendu : (null)\nOfficiel :%s\nEtudiant :%s\nresultat de copie officiel:%s\nresultat de copie etudiant:%s\n", memccpy(b, str_src, 99, 10), ft_memccpy(b2, str_src, 99, 10), (char*)b, (char*)b2);
-	printf("Test 2 resultat attendu:%s\nEtudiant :%s\n", memccpy(b, str_src, 'l', 10), ft_memccpy(b2, str_src, 'l', 10));
-	str_src = "la bohemec";
-	printf("resultat attendu : pointeur vers une string vide \nOfficiel :%s\nEtudiant :%s\n", memccpy(b, str_src, 99, 10), ft_memccpy(b2, str_src, 99, 10));
-	str_src = STRING; 
-
-
-	printf("=== memmove ===\nresultat attendu : %s\nOfficiel :%s\nEtudiant :%s\n", str_src, memmove(b, str_src, 10), ft_memmove(b2, str_src, 10));
-	
-
-	printf("=== memchr ===\nOfficiel :%s\nEtudiant :%s\n", memchr(str_src, 101, 10), ft_memchr(str_src, 101, 10));
-	
-
-	printf("=== memcmp ===\nOfficiel :%d\nEtudiant :%d\n", memcmp(str_src, str_src2, 10), ft_memcmp(str_src, str_src2, 10));
-	printf("2eme essai\nOfficiel :%d\nEtudiant :%d\n", memcmp(str_src, str_src, 10), ft_memcmp(str_src, str_src, 10));
-	printf("3eme essai\nOfficiel :%d\nEtudiant :%d\n", memcmp(str_src, "la bo", 10), ft_memcmp(str_src, "la bo", 10));
-	printf("4eme essai\nOfficiel :%d\nEtudiant :%d\n", memcmp("la boa", "la boz", 10), ft_memcmp("la boa", "la boz", 10));
-
+	test_ft_memcpy();
+	test_ft_memccpy();
+	test_ft_memmove();
+	test_ft_memchr();
+	test_ft_memcmp();
 
 	printf("=== strlen ===\nResultat attendu : le nombre de caracteres dans \"%s\"\nOfficiel :%lu\nEtudiant :%lu\n", STRING, strlen(STRING), ft_strlen(STRING));
 	
