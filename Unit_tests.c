@@ -1,4 +1,5 @@
 /* ************************************************************************** */
+
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Unit_tests.c                                       :+:      :+:    :+:   */
@@ -6,7 +7,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:18:24 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 20:23:36 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/14 14:32:45 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +26,6 @@ int main(void)
 {
 	char copy[11];
 	char copy2[11];
-	char copy3[10];
-	char copy4[10];
-	char lcatstring[32];
-	char lcatstring2[32];
 	void *memalloctest;
 	char *memdeltest = (char*)malloc(sizeof(char*) * 20);
 	memset(memdeltest, 'a', 10);
@@ -42,16 +39,12 @@ int main(void)
 	test_ft_memmove();
 	test_ft_memchr();
 	test_ft_memcmp();
-
-	printf("=== strlen ===\nResultat attendu : le nombre de caracteres dans \"%s\"\nOfficiel :%lu\nEtudiant :%lu\n", STRING, strlen(STRING), ft_strlen(STRING));
-	
+	test_ft_strlen();
 	test_ft_strdup();
 
 	printf("=== strcpy ===\nResultat attendu :%s\nEtudiant :%s\n", strcpy(copy, STRING), ft_strcpy(copy2, STRING));
 	
-
-	printf("=== strncpy ===\nResultat attendu :%s\nEtudiant :%s\n", strncpy(copy3, STRING, 10), ft_strncpy(copy4, STRING, 10));
-
+	test_ft_strncpy();
 
 	char catstring[32];
 	char catstring2[32];
@@ -63,17 +56,13 @@ int main(void)
 
 	printf("=== strncat ===\nOriginal:%s\nEtudiant:%s\n", strncat(catstring, STRING, 5), ft_strncat(catstring2, STRING, 5));
 	
-	strcat(lcatstring, STRING);
-	strcat(lcatstring2, STRING);
-	printf("=== strlcat ===\nOriginal:%lu\nEtudiant:%lu\n", strlcat(lcatstring, STRING, 32), ft_strlcat(lcatstring2, STRING, 32));
-	printf("Original:%s\nEtudiant:%s\n", catstring, catstring2);
-	printf("Original:%c\nEtudiant:%c\n", catstring[30], catstring2[30]);
+	test_ft_strlcat();
 
 
 	printf("=== strchr ===\nOriginal:%s\nEtudiant:%s\n", strchr(catstring, 'b'), ft_strchr(catstring, 'b'));
 	
 
-	printf("=== strrchr ===\nOriginal:%s\nEtudiant:%s\n", strrchr(catstring, 'b'), ft_strrchr(catstring, 'b'));
+test_ft_strrchr();
 	
 
 	printf("=== strstr ===\nOriginal:%s\nEtudiant:%s\n", strstr(STRINGTOLONG, "coeur"), ft_strstr(STRINGTOLONG, "coeur"));
