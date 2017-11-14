@@ -43,7 +43,7 @@ int main(void)
 	test_ft_strdup();
 
 	printf("=== strcpy ===\nResultat attendu :%s\nEtudiant :%s\n", strcpy(copy, STRING), ft_strcpy(copy2, STRING));
-	
+
 	test_ft_strncpy();
 
 	char catstring[32];
@@ -62,7 +62,7 @@ int main(void)
 	printf("=== strchr ===\nOriginal:%s\nEtudiant:%s\n", strchr(catstring, 'b'), ft_strchr(catstring, 'b'));
 	
 
-test_ft_strrchr();
+	test_ft_strrchr();
 	
 
 	printf("=== strstr ===\nOriginal:%s\nEtudiant:%s\n", strstr(STRINGTOLONG, "coeur"), ft_strstr(STRINGTOLONG, "coeur"));
@@ -74,10 +74,7 @@ test_ft_strrchr();
 
 	printf("=== strcmp ===\nOriginal:%d\nEtudiant:%d\n", strcmp(STRINGTOLONG, STRING), ft_strcmp(STRINGTOLONG, STRING));
 
-	
-	printf("=== atoi ===\nOriginal:%d\nEtudiant:%d\n", atoi(ATOITEST), ft_atoi(ATOITEST));
-	printf("-Negative test\nOriginal:%d\nEtudiant:%d\n", atoi(ATOITESTNEG), ft_atoi(ATOITESTNEG));
-
+	test_ft_atoi();
 
 	printf("=== isalpha ===\nOriginal:%d\n,Etudiant:%d\n", isalpha('A'), ft_isalpha('A'));
 	printf("Test 2\nOriginal:%d\n,Etudiant:%d\n", isalpha('9'), ft_isalpha('9'));
@@ -93,10 +90,8 @@ test_ft_strrchr();
 
 
 	printf("=== iscascii === \nOriginal:%d\nEtudiant:%d\n", isascii(127), ft_isascii(127));
-
 	
-	printf("=== isprint === \nOriginal:%d\nEtudiant:%d\n", isprint(127), ft_isprint(127));
-
+	test_ft_isprint();
 		
 	printf("=== toupper === \nOriginal:%c\nEtudiant:%c\n", toupper('A'), ft_toupper('A'));
 	printf("Original:%c\nEtudiant:%c\n", toupper('{'), ft_toupper('{'));

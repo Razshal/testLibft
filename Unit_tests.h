@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:18:03 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/14 16:16:38 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/14 19:05:12 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <limits.h>
 
 #define SUCCESSMSG "\e[32m[Success]\e[39m\n"
 #define PRINTFSUCCESS printf("%s", SUCCESSMSG)
@@ -32,6 +33,9 @@
 #define TESTCHAR 'b'
 #define TESTCHARTRAP 'c'
 #define PRINTNAME(name) printf("=== %s ===\n", name)
+
+#define INTMIN "-2147483648"
+#define INTMAX "2147483647"
 
 void test_ft_memset(void);
 void test_ft_bzero(void);
@@ -52,6 +56,8 @@ void test_ft_strrchr(void);
 
 
 void test_ft_strstr(void);
+void test_ft_atoi(void);
+void test_ft_isprint(void);
 
 
 #endif
