@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 18:54:24 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/12 14:44:53 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:57:32 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 void test_ft_memset(void)
 {
-	char str[FILLER];
-	char str2[FILLER];
+	PRINTNAME("memset");
+	char str[FILLER * 2];
+	char str2[FILLER * 2];
 	
-	memset(str, 'c', 10);
-	ft_memset(str2, 'c', 10);
-	printf("=== memset ===\n");
+	memset(str, 'c', FILLER * 2);
+	ft_memset(str2, 'c', FILLER * 2);
 
 	if(!memcmp(str, str2, FILLER))
 		PRINTFSUCCESS;
 	else
 	{
 		PRINTFFAILURE;
-		printf("Votre memset ne produit pas le resultat du memset officiel:%s\nle votre:%s\n", str, str2);
+		EASYTESTFAIL;
 	}
 }

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strcpy.c                                   :+:      :+:    :+:   */
+/*   test_ft_strncmp.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 17:48:32 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/16 17:54:32 by mfonteni         ###   ########.fr       */
+/*   Created: 2017/11/15 18:35:19 by mfonteni          #+#    #+#             */
+/*   Updated: 2017/11/15 19:17:08 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Unit_tests.h"
 
-void test_ft_strcpy(void)
+void test_ft_strncmp(void)
 {
-	PRINTNAME("strcpy");
-	char cpy[FILLER + 1];
-	char cpy2[FILLER + 1];
-	if (!memcmp(strcpy(cpy, STRING), ft_strcpy(cpy2, STRING), FILLER + 1))
+	PRINTNAME("strncmp");
+	char *comp = "abcdefgh";
+	char *comp2 = "abcdgfgdfh";
+	if (strncmp(comp, comp2, 4) == ft_strncmp(comp, comp2, 4))
 		PRINTFSUCCESS;
 	else
 	{
 		PRINTFFAILURE;
-		EASYTESTFAIL;
+		printf("echec d'un test simple\n");
+	}
+	if (strncmp(STRING, STRINGFAT, 10) == ft_strncmp(STRING, STRINGFAT, 10))
+		PRINTFSUCCESS;
+	else
+	{
+		PRINTFFAILURE;
+		printf("echec d'un test simple\n");
 	}
 }

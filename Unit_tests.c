@@ -19,14 +19,9 @@
 #include "../libft/libft.h"
 
 #define MEMALLOCSIZE 25
-#define ATOITEST "12354654"
-#define ATOITESTNEG "-98654654"
 
 int main(void)
 {
-	char copy[11];
-	char copy2[11];
-	void *memalloctest;
 	char *memdeltest = (char*)malloc(sizeof(char*) * 20);
 	memset(memdeltest, 'a', 10);
 	char *strnewtest;
@@ -41,25 +36,16 @@ int main(void)
 	test_ft_memcmp();
 	test_ft_strlen();
 	test_ft_strdup();
-
-	printf("=== strcpy ===\nResultat attendu :%s\nEtudiant :%s\n", strcpy(copy, STRING), ft_strcpy(copy2, STRING));
-
+	test_ft_strcpy();
 	test_ft_strncpy();
+	test_ft_strcat();
 
-	char catstring[32];
-	char catstring2[32];
-	printf("=== strcat ===\nAttendu  :%s\nEtudiant :%s\n", strcat(catstring, STRING), ft_strcat(catstring2, STRING));
-	printf("2eme passe\nOriginal :%s\nEtudiant :%s\n", strcat(catstring, STRING), ft_strcat(catstring2, STRING));
-	printf("case 11 original : %c, case 11 Etudiant %c\n", catstring[11], catstring2[11]);
-	printf("case 22 original : %c, case 22 Etudiant %c\n", catstring[22], catstring2[22]);
-
-
-	printf("=== strncat ===\nOriginal:%s\nEtudiant:%s\n", strncat(catstring, STRING, 5), ft_strncat(catstring2, STRING, 5));
+//	printf("=== strncat ===\nOriginal:%s\nEtudiant:%s\n", strncat(catstring, STRING, 5), ft_strncat(catstring2, STRING, 5));
 	
 	test_ft_strlcat();
 
 
-	printf("=== strchr ===\nOriginal:%s\nEtudiant:%s\n", strchr(catstring, 'b'), ft_strchr(catstring, 'b'));
+//	printf("=== strchr ===\nOriginal:%s\nEtudiant:%s\n", strchr(catstring, 'b'), ft_strchr(catstring, 'b'));
 	
 
 	test_ft_strrchr();
@@ -68,12 +54,11 @@ int main(void)
 	printf("=== strstr ===\nOriginal:%s\nEtudiant:%s\n", strstr(STRINGTOLONG, "coeur"), ft_strstr(STRINGTOLONG, "coeur"));
 
 
-	printf("=== strnstr ===\nOriginal:%s\nEtudiant:%s\n", strnstr(STRINGTOLONG, "", 100), ft_strnstr(STRINGTOLONG, "", 100));
-	printf("Test 2\nOriginal:%s\nEtudiant:%s\n", strnstr(STRINGTOLONG, "coeur", 100), ft_strnstr(STRINGTOLONG, "coeur", 100));
+	test_ft_strnstr();
 
 
 	printf("=== strcmp ===\nOriginal:%d\nEtudiant:%d\n", strcmp(STRINGTOLONG, STRING), ft_strcmp(STRINGTOLONG, STRING));
-
+	test_ft_strncmp();
 	test_ft_atoi();
 
 	printf("=== isalpha ===\nOriginal:%d\n,Etudiant:%d\n", isalpha('A'), ft_isalpha('A'));
@@ -102,7 +87,7 @@ int main(void)
 	printf("Original:%c\nEtudiant:%c\n", tolower('{'), ft_tolower('{'));
 	printf("Original:%c\nEtudiant:%c\n", tolower('z'), ft_tolower('z'));
 	
-
+/*
 	printf("=== memalloc ===\n");
 	memalloctest = ft_memalloc(15);
 	((char*)memalloctest)[10] = 'a';
@@ -110,7 +95,7 @@ int main(void)
 		printf("failure");
 	else if (((char*)memalloctest)[10] == 'a')
 		printf("Success\n");
-
+*/
 
 	printf("=== memdel ===\n");
 	ft_memdel((void*)&memdeltest);	
@@ -141,5 +126,9 @@ int main(void)
 	ft_strclr(untest);
 	printf("%d", ft_strcmp(untest, STRING));
 	*/
+	
+	test_ft_strtrim();
+	test_ft_itoa();
 
+	test_ft_lstmap();
 }

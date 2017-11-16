@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strcpy.c                                   :+:      :+:    :+:   */
+/*   test_ft_itoa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 17:48:32 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/16 17:54:32 by mfonteni         ###   ########.fr       */
+/*   Created: 2017/11/15 12:49:43 by mfonteni          #+#    #+#             */
+/*   Updated: 2017/11/15 12:55:24 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Unit_tests.h"
 
-void test_ft_strcpy(void)
+void test_ft_itoa(void)
 {
-	PRINTNAME("strcpy");
-	char cpy[FILLER + 1];
-	char cpy2[FILLER + 1];
-	if (!memcmp(strcpy(cpy, STRING), ft_strcpy(cpy2, STRING), FILLER + 1))
+	PRINTNAME("itoa");
+	if (!strcmp(ft_itoa(-245), "-245"))
 		PRINTFSUCCESS;
 	else
 	{
 		PRINTFFAILURE;
-		EASYTESTFAIL;
+		printf("ne fonctionne pas avec des arguments basiques\n");
 	}
 }

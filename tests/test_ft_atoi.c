@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 18:11:19 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/14 18:51:45 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:47:30 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	test_ft_atoi(void)
 	else
 	{
 		PRINTFFAILURE;
-		printf("echec avec un test basique de nombre positif\n");
+		EASYTESTFAIL;
 	}
 ///////////////=================================================
 	if (atoi("-26549968") == ft_atoi("-26549968"))

@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 15:32:09 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/14 16:16:08 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:46:23 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void test_ft_strrchr(void)
 	else
 	{
 		PRINTFFAILURE;
-		printf("Ne fonctionne pas avec des arguments basiques\n");
+		EASYTESTFAIL;
 	}
 
 	if (strrchr(STRING, '\0') == ft_strrchr(STRING, '\0'))

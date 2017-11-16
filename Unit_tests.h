@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:18:03 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/14 19:05:12 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/16 19:16:38 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <limits.h>
 
 #define SUCCESSMSG "\e[32m[Success]\e[39m\n"
 #define PRINTFSUCCESS printf("%s", SUCCESSMSG)
 #define FAILUREMSG "\e[31m[Failure]\e[39m\n"
 #define PRINTFFAILURE printf("%s", FAILUREMSG)
+#define EASYTESTFAIL printf("Echec d'un test de fonctionnement basique\n");
 #define FILLER 10
 #define FATFILLER 86
 #define STRING "la boheme."
@@ -46,9 +46,9 @@ void test_ft_memchr(void);
 void test_ft_memcmp(void);
 void test_ft_strlen(void);
 void test_ft_strdup(void);
-
+void test_ft_strcpy(void);
 void test_ft_strncpy(void);
-
+void test_ft_strcat(void);
 
 void test_ft_strlcat(void);
 
@@ -56,8 +56,16 @@ void test_ft_strrchr(void);
 
 
 void test_ft_strstr(void);
+void test_ft_strnstr(void);
+
+void test_ft_strncmp(void);
 void test_ft_atoi(void);
 void test_ft_isprint(void);
+
+void test_ft_strtrim(void);
+
+void test_ft_itoa(void);
+void test_ft_lstmap(void);
 
 
 #endif
