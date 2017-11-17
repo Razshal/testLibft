@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 12:22:50 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/14 13:29:34 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/17 15:50:47 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void test_ft_strncpy(void)
 	else
 	{
 		PRINTFFAILURE;
-		printf("Ne fonctionne pas avec un string basique");
+		printf("Ne fonctionne pas avec un string basique\n");
 	}
 	if (!memcmp(strncpy(dst, src, FILLER), ft_strncpy(dst2, src, FILLER), FILLER))
 		PRINTFSUCCESS;

@@ -6,7 +6,7 @@
 /*   By: mfonteni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:18:03 by mfonteni          #+#    #+#             */
-/*   Updated: 2017/11/16 19:16:38 by mfonteni         ###   ########.fr       */
+/*   Updated: 2017/11/17 16:29:59 by mfonteni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void test_ft_strtrim(void);
 
 void test_ft_itoa(void);
 void test_ft_lstmap(void);
+
+//void test_ft_strlowcase(void);
 
 
 #endif

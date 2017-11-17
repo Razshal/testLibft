@@ -131,4 +131,6 @@ int main(void)
 	test_ft_itoa();
 
 	test_ft_lstmap();
+
+//	test_ft_strlowcase();
 }
